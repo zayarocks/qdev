@@ -26,4 +26,6 @@ To run the basic HTML page:
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
 
+Files live in ``www``.
+
 Goto: http://LOCAL_NETWORK_NAME.local:8000
