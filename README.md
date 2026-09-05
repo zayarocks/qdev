@@ -20,5 +20,8 @@ Now preview the banner:
 python3 ./rainbow_motd.py
 ```
 
-
-
+## Web Server
+To run the basic HTML page:
+```
+python3 -m http.server 8000 --bind 0.0.0.0
+```
