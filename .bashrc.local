@@ -14,3 +14,7 @@ if [[ -n "$SSH_CONNECTION" && -z "$RAINBOW_MOTD_SHOWN" ]]; then
     export RAINBOW_MOTD_SHOWN=1
     python3 "$HOME/rainbow-motd.py"
 fi
+
+# Hide system folders
+alias ls='ls --color=auto --hide=lost+found'
+alias ls='ls --color=auto --ignore=lost+found --ignore=ArduinoApps'
