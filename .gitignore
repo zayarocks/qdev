@@ -1,0 +1,9 @@
+# Ignore everything in the home directory.
+*
+
+# Track only these files.
+!.gitignore
+!.bashrc.local
+!README.md
+!motd.txt
+!rainbow-motd.py

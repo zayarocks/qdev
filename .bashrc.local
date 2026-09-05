@@ -1,0 +1,16 @@
+# qdev shell customizations
+
+# Rainbow prompt with a black background.
+PS1='\[\e[1;38;5;196;48;5;0m\]\u'
+PS1+='\[\e[38;5;208;48;5;0m\]@'
+PS1+='\[\e[38;5;226;48;5;0m\]\h'
+PS1+='\[\e[38;5;46;48;5;0m\]:'
+PS1+='\[\e[38;5;51;48;5;0m\]\w'
+PS1+='\[\e[38;5;201;48;5;0m\]\$ '
+PS1+='\[\e[0;37;40m\]'
+
+# Display the rainbow banner once per SSH session.
+if [[ -n "$SSH_CONNECTION" && -z "$RAINBOW_MOTD_SHOWN" ]]; then
+    export RAINBOW_MOTD_SHOWN=1
+    python3 "$HOME/rainbow-motd.py"
+fi
