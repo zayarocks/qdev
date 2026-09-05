@@ -1,0 +1,17 @@
+
+html {
+}
+
+body {
+	margin: 0 auto;
+	max-width: 1000px;
+	font-family: "Courier New", monospace;
+}
+
+tr {
+	text-align: left;
+}
+
+th {
+	padding-right: 50px;
+}
