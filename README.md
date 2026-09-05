@@ -25,3 +25,5 @@ To run the basic HTML page:
 ```
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
+
+Goto: [http://s3cr3t.local:8000]
