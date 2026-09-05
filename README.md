@@ -5,7 +5,7 @@ Set a network name and password.
 
 ## SSH
 ```bash
-ssh arduino@[NETWORK_NAME].local
+ssh arduino@LOCAL_NETWORK_NAME.local
 ```
 
 
