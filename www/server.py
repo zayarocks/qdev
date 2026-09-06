@@ -70,7 +70,7 @@ def values():
 def build_page():
     html = (HERE / "index.html").read_text()
     for name, value in values().items():
-        html = html.replace("{{" + name + "}}", "<b>" + str(value) + "</b>")
+        html = html.replace("{{" + name + "}}", str(value))
     return html
 
 class Handler(BaseHTTPRequestHandler):
