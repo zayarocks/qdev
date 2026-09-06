@@ -8,10 +8,13 @@ body {
 	font-family: "Courier New", monospace;
 }
 
-tr {
-	text-align: left;
+p {
+	font-size: 120%;
+	line-height: 150%;
 }
 
-th {
-	padding-right: 50px;
+b {
+	background: #000;
+	color: magenta;
+	padding: 5px;
 }

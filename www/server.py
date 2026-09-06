@@ -10,6 +10,10 @@ import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+BOARD_NAMES = {
+    "Arduino SA,Imola": "Arduino UNO Q",
+}
+
 PORT = 8000
 HERE = Path(__file__).parent
 
@@ -48,6 +52,10 @@ def values():
                     for l in read("/etc/os-release").splitlines()
                     if l.startswith("PRETTY_NAME=")), "Linux"),
         "board": read("/sys/firmware/devicetree/base/model", "unknown"),
+        "board_name": BOARD_NAMES.get(
+            read("/sys/firmware/devicetree/base/model", ""), "Unknown board"),
+        "soc": (read("/sys/firmware/devicetree/base/compatible", "")
+                .replace("\x00", " ").split() or ["unknown"])[-1],
         "cores": str(os.cpu_count()),
         "uptime": f"{uptime // 86400}d {uptime % 86400 // 3600}h {uptime % 3600 // 60}m",
         "load": f"{os.getloadavg()[0]:.2f}",
@@ -62,9 +70,8 @@ def values():
 def build_page():
     html = (HERE / "index.html").read_text()
     for name, value in values().items():
-        html = html.replace("{{" + name + "}}", str(value))
+        html = html.replace("{{" + name + "}}", "<b>" + str(value) + "</b>")
     return html
-
 
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"

@@ -6,22 +6,17 @@
 	</head>
 	<body>
 		<h1>Hello World!</h1>
+		<p>This is a {{board_name}} running {{os}}.</p>
 
-		<table>
-			<tr><th>hostname:</th>     <td>{{hostname}}</td></tr>
-			<tr><th>board:</th>        <td>{{board}}</td></tr>
-			<tr><th>system:</th>       <td>{{os}}</td></tr>
-			<tr><th>kernel:</th>       <td>{{kernel}}</td></tr>
-			<tr><th>kernel build:</th> <td>{{built}}</td></tr>
-			<tr><th>architecture:</th> <td>{{arch}}</td></tr>
-			<tr><th>cores:</th>        <td>{{cores}}</td></tr>
-			<tr><th>uptime:</th>       <td>{{uptime}}</td></tr>
-			<tr><th>load:</th>         <td>{{load}}</td></tr>
-			<tr><th>memory used:</th>  <td>{{memory_used}}</td></tr>
-			<tr><th>memory total:</th> <td>{{memory_total}}</td></tr>
-			<tr><th>disk free:</th>    <td>{{disk_free}}</td></tr>
-			<tr><th>temperature:</th>  <td>{{temperature}} &deg;C</td></tr>
-			<tr><th>page built at:</th><td>{{time}}</td></tr>
-		</table>
+<p>Kernel {{kernel}} on {{arch}}, {{cores}} cores, {{soc}}.
+   The device tree calls the board {{board}}.</p>
+
+		<p>
+			Up {{uptime}} with a load of {{load}}.
+			Using {{memory_used}} of {{memory_total}} memory, {{disk_free}} disk free.
+			Warmest sensor reads {{temperature}} &deg;C.
+		</p>
+
+		<p>Page built at {{time}}.</p>
 	</body>
 </html>
